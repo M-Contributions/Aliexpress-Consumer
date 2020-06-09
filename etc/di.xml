@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- CommandBus Orchestration (Framework Agnostic Component) -->
+    <!-- I'm gonna assume myself dependencies management instead of using CommandBus middleware's -->
+
+    <!-- Orchestrating Post Product Recipe -->
+    <type name="Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler">
+        <arguments>
+            <argument name="productPostMediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
+            <argument name="requestBuilder" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Builder\Product\Post</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand" type="Ticaje\AliexpressConsumer\Application\UseCase\Command\UseCaseCommand"/>
+    <virtualType name="Ticaje\AliexpressConsumer\Application\UseCase\Command\GetProductGroupsCommand" type="Ticaje\AliexpressConsumer\Application\UseCase\Command\UseCaseCommand"/>
+    <!-- Orchestrating Post Product Recipe -->
+
+    <!-- Command Bus Deps Definition -->
+    <type name="Ticaje\AliexpressConsumer\Application\UseCase\Bus">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="getProductGroups" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\GetProductGroupsCommand</item>
+                <item name="postProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand</item>
+            </argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="getProductGroups" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Handler\GetProductGroupsHandler</item>
+                <item name="postProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- CommandBus Deps Definition -->
+
+</config>
