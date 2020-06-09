@@ -7,7 +7,7 @@
     <!-- Orchestrating Post Product Recipe -->
     <type name="Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler">
         <arguments>
-            <argument name="productPostMediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
+            <argument name="mediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
             <argument name="requestBuilder" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Builder\Product\Post</argument>
         </arguments>
     </type>
