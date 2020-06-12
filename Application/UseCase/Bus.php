@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Application Class
- * @author Max Demian <ticaje@filetea.me>
- */
-
 declare(strict_types=1);
 
 namespace Ticaje\AliexpressConsumer\Application\UseCase;
@@ -56,7 +51,7 @@ class Bus implements CommandHandlerBusFacadeInterface
 
     /**
      * @return array
-     * Orchestrating service contract
+     * Orchestrating service contract, no virtual types allowed
      */
     private function orchestrate()
     {

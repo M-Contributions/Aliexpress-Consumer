@@ -8,16 +8,16 @@ declare(strict_types=1);
 
 namespace Ticaje\AliexpressConsumer\Application\UseCase\Handler;
 
-use Ticaje\AeSdk\Api\Interfaces\Post\ProductPostInterface as ProductPostMediator;
+use Ticaje\AeSdk\Api\Interfaces\Put\ProductPutInterface as ProductPutMediator;
 
 use Ticaje\AliexpressConsumer\Application\Interfaces\PostPutProductHandlerInterface;
 use Ticaje\AliexpressConsumer\Domain\Interfaces\Entity\RequestValidatorInterface;
 
 /**
- * Class PostProductHandler
+ * Class PutProductHandler
  * @package Ticaje\AliexpressConsumer\Application\UseCase\Handler
  */
-class PostProductHandler implements PostPutProductHandlerInterface
+class PutProductHandler implements PostPutProductHandlerInterface
 {
     use HandlerTrait;
 
@@ -28,13 +28,13 @@ class PostProductHandler implements PostPutProductHandlerInterface
     private $verb;
 
     /**
-     * PostProductHandler constructor.
-     * @param ProductPostMediator $mediator
+     * PutProductHandler constructor.
+     * @param ProductPutMediator $mediator
      * @param RequestValidatorInterface $requestValidator
      * @param string $verb
      */
     public function __construct(
-        ProductPostMediator $mediator,
+        ProductPutMediator $mediator,
         RequestValidatorInterface $requestValidator,
         string $verb
     ) {
