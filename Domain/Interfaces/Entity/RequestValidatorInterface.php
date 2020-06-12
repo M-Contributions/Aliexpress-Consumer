@@ -8,18 +8,20 @@ declare(strict_types=1);
 
 namespace Ticaje\AliexpressConsumer\Domain\Interfaces\Entity;
 
+use Ticaje\Contract\Patterns\Interfaces\Decorator\DecoratorInterface;
+
 use Ticaje\AeSdk\Infrastructure\Interfaces\Provider\Request\RequestDtoInterface;
 
 /**
- * Interface RequestBuilderInterface
+ * Interface RequestValidatorInterface
  * @package Ticaje\AliexpressConsumer\Domain\Interfaces\Entity
  */
-interface RequestBuilderInterface
+interface RequestValidatorInterface
 {
     /**
      * @param RequestDtoInterface $request
-     * @return string
+     * @return DecoratorInterface
      * By domain imperative, this method returns a json string that it's gonna be the data sent to AE Sdk.
      */
-    public function build(RequestDtoInterface $request): string;
+    public function validate(RequestDtoInterface $request): DecoratorInterface;
 }
