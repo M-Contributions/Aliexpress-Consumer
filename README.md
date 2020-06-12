@@ -2,7 +2,7 @@
 ## This extension defines Aliexpress API business rules and provides access to it
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ticaje/m2-ae-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-ae-consumer)
-[![Quality Score](https://img.shields.io/scrutinizer/g/M-Contributions/m2-ae-consumer.svg?style=flat-square)](https://scrutinizer-ci.com/g/M-Contributions/m2-ae-consumer)
+[![Quality Score](https://img.shields.io/scrutinizer/g/M-Contributions/ae-consumer.svg?style=flat-square)](https://scrutinizer-ci.com/g/M-Contributions/ae-consumer)
 [![Total Downloads](https://img.shields.io/packagist/dt/ticaje/m2-ae-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-ae-consumer)
 
 ## Preface
