@@ -1,5 +1,5 @@
 {
-  "name": "ticaje/m2-aliexpress-consumer",
+  "name": "ticaje/m2-ae-consumer",
   "authors": [
     {
       "name": "Max Demian",
@@ -18,7 +18,7 @@
     "magento/product-community-edition": "*",
     "league/oauth2-client": "^2.4",
     "league/tactician": "^1.0",
-    "ticaje/m2-aliexpress-di-container": "^1.0"
+    "ticaje/m2-ae-dic": "^1.0"
   },
   "require-dev": {
     "allure-framework/allure-phpunit": "~1.2.0",
