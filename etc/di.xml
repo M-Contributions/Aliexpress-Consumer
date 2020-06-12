@@ -4,28 +4,49 @@
     <!-- CommandBus Orchestration (Framework Agnostic Component) -->
     <!-- I'm gonna assume myself dependencies management instead of using CommandBus middleware's -->
 
+    <virtualType name="Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\ResponseDto" type="Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\Response"/>
+
     <!-- Orchestrating Post Product Recipe -->
-    <type name="Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler">
+    <type name="Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\Product\Post">
         <arguments>
-            <argument name="mediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
-            <argument name="requestBuilder" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Builder\Product\Post</argument>
+            <argument name="response" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\ResponseDto</argument>
         </arguments>
     </type>
 
-    <virtualType name="Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand" type="Ticaje\AliexpressConsumer\Application\UseCase\Command\UseCaseCommand"/>
-    <virtualType name="Ticaje\AliexpressConsumer\Application\UseCase\Command\GetProductGroupsCommand" type="Ticaje\AliexpressConsumer\Application\UseCase\Command\UseCaseCommand"/>
+    <type name="Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\Product\Put">
+        <arguments>
+            <argument name="response" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\ResponseDto</argument>
+        </arguments>
+    </type>
+
+    <type name="Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler">
+        <arguments>
+            <argument name="mediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
+            <argument name="requestValidator" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\Product\Post</argument>
+            <argument name="verb" xsi:type="string">post</argument>
+        </arguments>
+    </type>
+
+    <type name="Ticaje\AliexpressConsumer\Application\UseCase\Handler\PutProductHandler">
+        <arguments>
+            <argument name="mediator" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Put\Product</argument>
+            <argument name="requestValidator" xsi:type="object">Ticaje\AliexpressConsumer\Domain\Entity\Request\Validator\Product\Put</argument>
+            <argument name="verb" xsi:type="string">put</argument>
+        </arguments>
+    </type>
+
     <!-- Orchestrating Post Product Recipe -->
 
     <!-- Command Bus Deps Definition -->
     <type name="Ticaje\AliexpressConsumer\Application\UseCase\Bus">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="getProductGroups" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\GetProductGroupsCommand</item>
                 <item name="postProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand</item>
+                <item name="putProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\PutProductCommand</item>
             </argument>
             <argument name="handlers" xsi:type="array">
-                <item name="getProductGroups" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Handler\GetProductGroupsHandler</item>
                 <item name="postProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler</item>
+                <item name="putProduct" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Handler\PutProductHandler</item>
             </argument>
         </arguments>
     </type>
