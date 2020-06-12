@@ -1,9 +1,9 @@
 # Magento AliExpress Consumer
 ## This extension defines Aliexpress API business rules and provides access to it
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ticaje/m2-aliexpress-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-aliexpress-consumer)
-[![Quality Score](https://img.shields.io/scrutinizer/g/M-Contributions/m2-aliexpress-consumer.svg?style=flat-square)](https://scrutinizer-ci.com/g/M-Contributions/m2-aliexpress-consumer)
-[![Total Downloads](https://img.shields.io/packagist/dt/ticaje/m2-aliexpress-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-aliexpress-consumer)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ticaje/m2-ae-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-ae-consumer)
+[![Quality Score](https://img.shields.io/scrutinizer/g/M-Contributions/m2-ae-consumer.svg?style=flat-square)](https://scrutinizer-ci.com/g/M-Contributions/m2-ae-consumer)
+[![Total Downloads](https://img.shields.io/packagist/dt/ticaje/m2-ae-consumer.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-ae-consumer)
 
 ## Preface
 
@@ -33,7 +33,7 @@ The drawbacks of doing this is that a DC framework must be used in order to mana
 You can install this package using composer(the only way i recommend)
 
 ```bash
-composer require ticaje/m2-aliexpress-consumer
+composer require ticaje/m2-ae-consumer
 ```
 
 ## Features
