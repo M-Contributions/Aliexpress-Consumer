@@ -75,7 +75,7 @@ trait ValidatorTrait
                 && count($list) > 0
                 && (function ($list) {
                     $missing = [];
-                    foreach (self::SKU_INFO_LIST_REQUIRED_ATTRIBUTES as $property) {
+                    foreach (static::SKU_INFO_LIST_REQUIRED_ATTRIBUTES as $property) {
                         property_exists($list[0], $property) ?: array_push($missing, $property);
                     }
                     return empty($missing);
