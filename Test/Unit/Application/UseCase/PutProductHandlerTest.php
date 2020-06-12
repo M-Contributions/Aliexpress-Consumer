@@ -15,16 +15,16 @@ use Ticaje\Contract\Patterns\Implementation\Decorator\Responder\Response;
 use Ticaje\Contract\Patterns\Interfaces\Decorator\DecoratorInterface;
 
 use Ticaje\AliexpressConsumer\Application\Interfaces\PostPutProductHandlerInterface;
-use Ticaje\AliexpressConsumer\Application\UseCase\Handler\PostProductHandler;
-use Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand;
+use Ticaje\AliexpressConsumer\Application\UseCase\Handler\PutProductHandler;
+use Ticaje\AliexpressConsumer\Application\UseCase\Command\PutProductCommand;
 
 /**
  * Class PostProductHandlerTest
  * @package Ticaje\AliexpressConsumer\Test\Unit\Application\UseCase
  */
-class PostProductHandlerTest extends ParentClass
+class PutProductHandlerTest extends ParentClass
 {
-    protected $class = PostProductHandler::class;
+    protected $class = PutProductHandler::class;
 
     protected $interface = PostPutProductHandlerInterface::class;
 
@@ -41,7 +41,7 @@ class PostProductHandlerTest extends ParentClass
         $expectedValue = (new Response())->setMessage('Incorrect request, please check all your data'); // When the time to return real object comes this test must fail.
         $this->instance->method('handle')
             ->willReturn($expectedValue);
-        $command = new PostProductCommand();
+        $command = new PutProductCommand();
         $result = $this->instance->handle($command);
         $this->assertInstanceOf(DecoratorInterface::class, $result, 'Returns proper interface');
         $this->assertObjectHasAttribute('success', $result);
