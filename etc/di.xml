@@ -52,4 +52,45 @@
     </type>
     <!-- CommandBus Deps Definition -->
 
+    <!-- Console Command Deps Definition(App Level) -->
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ticaje_aliexpressconsumer_console_command_ae_api_get" xsi:type="object">Ticaje\AliexpressConsumer\Console\Command\AeApiGet</item>
+                <item name="ticaje_aliexpressconsumer_console_command_ae_api_post" xsi:type="object">Ticaje\AliexpressConsumer\Console\Command\AeApiPost</item>
+                <item name="ticaje_aliexpressconsumer_console_command_ae_bus_command_handler_post" xsi:type="object">Ticaje\AliexpressConsumer\Console\Command\BusCommandHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Ticaje\AliexpressConsumer\Console\Command\AeApiGet">
+        <arguments>
+            <argument name="apiOrderGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\Order</argument>
+            <argument name="apiFreightGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\FreightTemplate</argument>
+            <argument name="apiPromiseGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\PromiseTemplate</argument>
+            <argument name="apiMerchant" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\MerchantProfile</argument>
+            <argument name="apiCategoryTree" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\CategoryTree</argument>
+            <argument name="apiAttributeGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\Attribute</argument>
+            <argument name="apiProductGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Get\Product</argument>
+        </arguments>
+    </type>
+
+    <type name="Ticaje\AliexpressConsumer\Console\Command\AeApiPost">
+        <arguments>
+            <argument name="apiProductGet" xsi:type="object">Ticaje\AeDiContainer\Api\Mediator\Post\Product</argument>
+        </arguments>
+    </type>
+
+    <type name="Ticaje\AliexpressConsumer\Console\Command\BusCommandHandler">
+        <arguments>
+            <argument name="commandBus" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Bus</argument>
+            <argument name="postCommand" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\PostProductCommand</argument>
+            <argument name="putCommand" xsi:type="object">Ticaje\AliexpressConsumer\Application\UseCase\Command\PutProductCommand</argument>
+        </arguments>
+    </type>
+
+    <!-- Console Command Deps Definition -->
+
+
 </config>
