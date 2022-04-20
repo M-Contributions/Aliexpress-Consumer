@@ -12,7 +12,7 @@
   ],
   "description": "Module that defines Aliexpress API business rules and provides access to it",
   "type": "magento2-module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "require": {
     "php": "^7.0",
     "league/oauth2-client": "^2.4",
