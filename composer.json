@@ -15,7 +15,6 @@
   "version": "1.0.3",
   "require": {
     "php": "^7.0",
-    "magento/product-community-edition": "*",
     "league/oauth2-client": "^2.4",
     "league/tactician": "^1.0",
     "ticaje/m2-ae-dic": "^1.0"
@@ -27,12 +26,6 @@
     "phpunit/phpunit": "^7",
     "squizlabs/php_codesniffer": "~3.4.0"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://repo.magento.com/"
-    }
-  ],
   "autoload": {
     "files": [
       "registration.php"
